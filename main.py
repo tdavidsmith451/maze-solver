@@ -1,9 +1,11 @@
 from graphics import *
+from cell import *
 
 def main():
     win = Window(800, 600)
 
-    win.draw_line(Line(Point(2, 2), Point(200, 200)), "black")
+    cell = Cell(win)
+    cell.draw(200, 200, 250, 250)
 
     win.wait_for_close()
 
