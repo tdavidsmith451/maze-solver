@@ -33,6 +33,22 @@ class Cell:
             bottom_line = Line(Point(x1, y2), Point(x2, y2))
             self._win.draw_line(bottom_line, "black")
 
+        if self.has_left_wall == False:
+            left_line = Line(Point(x1, y1), Point(x1, y2))
+            self._win.draw_line(left_line, "white")
+
+        if self.has_right_wall == False:
+            right_line = Line(Point(x2, y1), Point(x2, y2))
+            self._win.draw_line(right_line, "white")
+
+        if self.has_top_wall == False:
+            top_line = Line(Point(x1, y1), Point(x2, y1))
+            self._win.draw_line(top_line, "white")
+
+        if self.has_bottom_wall == False:
+            bottom_line = Line(Point(x1, y2), Point(x2, y2))
+            self._win.draw_line(bottom_line, "white")
+
     def get_center_point(self):
         center_xcoord = (self._x2 - self._x1) / 2 + self._x1
         center_ycoord = (self._y2 - self._y1) / 2 + self._y1

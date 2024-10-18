@@ -16,5 +16,11 @@ class tests(unittest.TestCase):
         self.assertEqual(len(m1._cells), num_cols)
         self.assertEqual(len(m1._cells[0]), num_rows)
 
+    def test_maze_break_entrance_and_exit(self):
+        m1 = Maze(0, 0, 20, 20, 5, 5)
+        self.assertEqual(m1._cells[0][0].has_top_wall, False)
+        self.assertEqual(m1._cells[19][19].has_bottom_wall, False)
+
+
 if __name__ == "__main__":
     unittest.main()
